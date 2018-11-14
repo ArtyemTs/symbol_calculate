@@ -17,7 +17,7 @@ public class App {
         Scanner pathReqest = new Scanner(System.in);
         System.out.println("Введите путь к файлу");
         String filePathIn = pathReqest.next();
-// throws FileNotFoundException
+
         try {
             symbolCalculate(filePathIn);
         } catch (IOException e) {
@@ -52,7 +52,7 @@ public class App {
             }
 
 // Делаем сортировку по ключу для удобства чтения выведенного результата
-            Map<Character, Integer> treeMap = new TreeMap<Character, Integer>(result);
+            Map<Character, Integer> treeMap = new TreeMap<>(result);
 
             FileWriter fw = new FileWriter(new File("Result.txt"));
             for (Map.Entry entry : treeMap.entrySet()) {
